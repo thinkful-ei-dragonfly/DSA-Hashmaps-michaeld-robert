@@ -67,26 +67,17 @@ function main() {
 
 
   // 3. determine which collide... k/
-  // insert into idx values below?
+  // 1) insert into idx values below?
   // to insert keys 10, 22, 31, 4, 15, 28, 17, 88, 59 
-  // k % m
-  // [10 % 11, 22 % 12, 31 % 14, 4 % 15, 15 % 16, 28 % 17, 17 % 18, 88 % 19,  ]
-  // 10, 10, 3, 4, 15, 9, 17, 
-  // [empty, empty, 10, 31, 4, ]
+  // k % m (m = capacity of 11, does not change)
+  // [10 % 11, 22 % 11, 31 % 11,...
+  // 10, 0, 9,... when collision, insert in next empty spot.
+  
+  // 2) when collision, insert into next available in linked list
 
   // 
   const test1 = new Map();
-  // wrong
-  // test1.set(10, 0);
-  // test1.set(22, 1);
-  // test1.set(31, 2);
-  // test1.set(4, 3);
-  // test1.set(15, 4);
-  // test1.set(28, 5);
-  // test1.set(17, 6);
-  // test1.set(88, 7);
-  // test1.set(59, 8);
-  // console.log(test1);
+  
 }
 main();
 
@@ -96,7 +87,7 @@ main();
 * app or simple pen and paper *
 
 * 1) Show your hash map after the insertion of keys 10, 22, 31, 4, 15, 28, 17, 88, 59 
-* into a hash map of CAPACITY (IS THIS CAPACITY???) m = 11 using open addressing and a hash function k mod m.
+* into a hash map of CAPACITY (IS THIS CAPACITY???, YES) m = 11 using open addressing and a hash function k mod m.
 * ANSWER: 10 % 11 (10), 22 % 11, (0), 31 % 11 (9), 
 * 2) Show your hash map after the insertion of the keys 5, 28, 19, 15, 20, 33, 12, 17, 10 
 * into the hash map with collisions resolved by separate chaining. Let the hash 
@@ -115,8 +106,13 @@ main();
  * "google all that you think can think of".
  */
 
+const stringIter1 = newMap.keys();
+const stringIter2 = newMap.keys();
 
-
+const newString = '';
+while(stringIter1.next().value) {
+  newString = stringIter2.next().value;
+}
 
 
 
