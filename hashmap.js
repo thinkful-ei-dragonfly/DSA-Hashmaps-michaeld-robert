@@ -1,3 +1,5 @@
+'use strict';
+
 // Hashmap assignments
 // 128  64  32  16   8   4   2   1
 // []   []  []  []  []  []  []  []
@@ -32,7 +34,7 @@ class HashMap {
     this._hashTable[index] = {
       key,
       value,
-      DELETED: false
+      DELETED: false,
     };
   }
 
