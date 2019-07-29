@@ -56,18 +56,18 @@ function removeDuplicates(string) {
   for (let i = 0; i < string.length; i++) {
     newMap.set(string[i].toLowerCase());
   }
+
+  const stringIter1 = newMap.keys(); // 1st iterator, check
+  const stringIter2 = newMap.keys(); // 2nd iterator, collect
   
-  const stringIter = newMap.keys();
+  while(stringIter1.next().value) { // g, o
+    newString += stringIter2.next().value; // += g += o
+  }
 
-  while (!stringIter.next().value)
-    newString = newString + stringIter.next().value;
-
-
-  console.log(newString);
-  console.log(stringIter);
-  console.log(newMap);
+  return newString;
+  // console.log(newMap);
 }
-removeDuplicates("Google");
+// removeDuplicates("Google");
 /*
 * 3. Demonstrate understanding of Hash maps
 * You don't need to write code for the following two drills. use any drawing 
@@ -81,28 +81,74 @@ removeDuplicates("Google");
 * table have a length m = 9, and let the hash function be k mod m.
 */
 
-
 /*
 ! for 4, 5, and 6, can use built-in map class
 */
-/*
- * 4. Remove duplicates
- * Implement a function to delete all duplicated characters in a string and keep only
- * the first occurrence of each character. For example, if the input is string “google”,
- * the result after deletion is “gole”. Test your program with a sentence as well such as
- * "google all that you think can think of".
- */
 
-const stringIter1 = newMap.keys();
-const stringIter2 = newMap.keys();
+// 5. Any permutation a palindrome
 
-const newString = '';
-while(stringIter1.next().value) {
-  newString = stringIter2.next().value;
+//aa nn nn aa 
+// racecar   , needs two r's, two a's,  
+// even characters, characters need to be  anna needs , odd characters 
+// hasPermutationPalindrome('aannnnaa');
+// hasPermutationPalindrome('anna');
+// hasPermutationPalindrome('not');
+// hasPermutationPalindrome('racecar');
+function hasPermutationPalindrome(string) {
+  let oddChar = string.length % 2 === 1;
+  // let oddChar = false;
+  // hm = new map()
+  let value;
+
+  // for (let i = 0; i < 'racecar'.length; i++) {
+  //   if (hm.has())
+  // }
+ 
+  const newMap = new Map();
+  const strLength = string.length;
+  // for even
+
+  // pairs 
+
+
+  // for odd
+  for (let i = 0; i < string.length; i++) {
+    newMap.set(string[i].toLowerCase());
+  }
+
+
+  // console.log(newMap);
+  // console.log('length: ', newMap.size);
+
+  if (strLength % 2 === 0 && newMap.size === (strLength / 2)) {
+    console.log(string, ' can be a palindrome');
+  } 
+
+  // console.log('Math.floor(strLength / 2) + 1:   ', Math.floor(strLength / 2) + 1);
+  // console.log('newMap.size % 2 === 1   ', string === 1);
+
+  if (strLength % 2 === 1 && newMap.size === Math.floor(strLength / 2) + 1) {
+    console.log(string, ' can be a palindrome');
+  } 
 }
 
+// Annagram
+function groupAnagram(arr) {
+  const map1 = new Map();
+  const map2 = new Map();
 
+  // gonna take some changes here
+  for (let i = 0; i < arr.length; i++) {
+    map1.set(arr[i]);
+  } 
+  for (let j = 0; j < map1.size; j++) {
+    // chars 
+  }
 
+  console.log(map1);
+
+}
+groupAnagram(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']);
 
 
 
