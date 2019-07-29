@@ -23,49 +23,17 @@ const WhatDoesThisDo = function() {
 };
 
 function main() {
-  const hashMap = new HashMap();
-  hashMap.MAX_LOAD_RATIO = 0.5;
-  hashMap.SIZE_RATIO = 3;
-
-  hashMap.set('Hobbit', 'Bilbo');
-  hashMap.set('Hobbit', 'Frodo');
-  hashMap.set('Wizard', 'Gandolf');
-  hashMap.set('Human', 'Aragon');
-  hashMap.set('Elf', 'Legolas');
-  hashMap.set('Maiar', 'The Necromancer');
-  hashMap.set('Maiar', 'Sauron');
-  hashMap.set('RingBearer', 'Gollum');
-  hashMap.set('LadyOfLight', 'Galadriel');
-  hashMap.set('HalfElven', 'Arwen');
-  hashMap.set('Ent', 'Treebeard');
-
-  /* print and notice the notice the length and items that
-  are hashed in your hash map. Have you hashed all the items you were asked to? */
-  console.log('hashMap: ', hashMap);
-
+  
   // format? to get
   // Retrieve the value that is hashed in the key "Maiar" and Hobbit.
   // console.log(hashMap.get('Maiar'));
   // console.log(hashMap.get('Hobbit1'));
   // What are the values of Maiar and Hobbit that you have? Is there a discrepancy? Explain your answer.
-
   // What is the capacity of your hash table after you have hashed all the above items? Explain your answer.
-
   // 2.
-  WhatDoesThisDo();
-
-
-  hashMap.set('Hobbit', 'Bilbo');
-  hashMap.set('Hobbit', 'Frodo');
-  hashMap.set('Wizard', 'Gandolf');
-  hashMap.set('Human', 'Aragon');
-  hashMap.set('Elf', 'Legolas');
-  hashMap.set('Maiar', 'The Necromancer');
-  hashMap.set('Maiar', 'Sauron');
-  hashMap.set('RingBearer', 'Gollum');
-  hashMap.set('LadyOfLight', 'Galadriel');
-
-
+  
+  // WhatDoesThisDo();
+  
   // 3. determine which collide... k/
   // 1) insert into idx values below?
   // to insert keys 10, 22, 31, 4, 15, 28, 17, 88, 59 
@@ -79,8 +47,27 @@ function main() {
   const test1 = new Map();
   
 }
-main();
+// main();
 
+function removeDuplicates(string) {
+  const newMap = new Map();
+  let newString = '';
+
+  for (let i = 0; i < string.length; i++) {
+    newMap.set(string[i].toLowerCase());
+  }
+  
+  const stringIter = newMap.keys();
+
+  while (!stringIter.next().value)
+    newString = newString + stringIter.next().value;
+
+
+  console.log(newString);
+  console.log(stringIter);
+  console.log(newMap);
+}
+removeDuplicates("Google");
 /*
 * 3. Demonstrate understanding of Hash maps
 * You don't need to write code for the following two drills. use any drawing 

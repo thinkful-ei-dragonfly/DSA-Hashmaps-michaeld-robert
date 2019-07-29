@@ -1,5 +1,4 @@
 'use strict';
-
 // Hashmap assignments
 // 128  64  32  16   8   4   2   1
 // []   []  []  []  []  []  []  []
@@ -27,7 +26,6 @@ class HashMap {
     }
     //Find the slot where this key should be in
     const index = this._findSlot(key);
-
     if (!this._hashTable[index]) {
       this.length++;
     }
@@ -88,7 +86,7 @@ class HashMap {
       //converting hash to a 32 bit integer
       hash = hash & hash;
     }
-    //making sure has is unsigned - meaning non-negtive number.
+    //making sure has is unsigned - meaning non-negative number.
     return hash >>> 0;
   }
 }
